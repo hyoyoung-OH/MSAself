@@ -1,28 +1,32 @@
 
 public class AccountingApp {
 
+	// 공급가액
+	public static double valueOfSupply = 10000.0;
+	// 부가가치세율
+	public static double vatRate = 0.1;
+	// 부가세
+	// double vat = valueOfSupply * vatRate;
+	public static double vat = getVAT();
+	
+	// 합계
+	//double total = valueOfSupply + vat;
+	public static double total = getTOTAL();
+
+	public static double getVAT() {
+		return valueOfSupply * vatRate;
+	}
+
+	public static double getTOTAL() {
+		return valueOfSupply + vat;
+	}
+
 	public static void main(String[] args) {
-		
-		
-		double valueOfSupply = Double.parseDouble(args[0]);
-		double vatRate = 0.1;
-		double expenseRate = 0.3;
-		double vat = valueOfSupply*vatRate;
-		double total = valueOfSupply+vat;
-		double expense = valueOfSupply*expenseRate;
-		double income = valueOfSupply-expense;
-		double divied1 = income* 0.5;
-		double divided2 = income* 0.3;
-		double divided3 = income* 0.2;
-		
+
 		System.out.println("Value of Supply : " + valueOfSupply);
-		System.out.println("VAT : " + vat );
-		System.out.println("Total : " + total );
-		System.out.println("Expense : " + expense );
-		System.out.println("Income : " + income );		
-		System.out.println("Dividend 1: " + divied1 );		
-		System.out.println("Dividend 2: " + divided2 );		
-		System.out.println("Dividend 3: " + divided3 );
+		System.out.println("VAT : " + vat);
+		System.out.println("Total : " + total);
+
 	}
 
 }
